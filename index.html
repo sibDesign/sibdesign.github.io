@@ -37,10 +37,10 @@
             Разработка сайтов под ключ</p>
         </div>
         </div>
-        <a href="#" class="main-down"><i class="icon-down"></i></a>
+        <a class="main-down slowly" href="#portfolio_works"><i class="icon-down"></i></a>
     </div>
     
-    <div class="portfolio">
+    <div class="portfolio" id="portfolio_works">
         <div class="container">
             <h2 class="section-header">Портфолио</h2>
             <div class="row">
@@ -109,12 +109,25 @@
     <script src="/js/bootstrap.min.js"></script>
     <script>
         $(function() {
-           var link = $('a[data-toggle="modal"]');
+        var link = $('a[data-toggle="modal"]');
             link.on('click', function(event) {
                 var work = $(this).attr('data-work');
                 var modal = $('.modal');
                 modal.find('.modal-body').load(work+'.html');
             });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+        // навигация - плавный скроллинг к якорю
+        $(".slowly").on("click", function(event){
+        // забираем идинтификатор бока с атрибута href
+        var id = $(this).attr('href'),
+        // узнаём высоту от начала страницы до блока на который ссылается якорь
+        top = $(id).offset().top;
+        // анимируем плавный переход на расстояние - top за 1000 мс
+        $('body,html').animate({scrollTop: top},1000);
+        });
         });
     </script>
   </body>
