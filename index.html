@@ -33,7 +33,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="main">
+    <div class="main parallax-window" data-parallax="scroll" data-speed="0.4" data-image-src="../img/main-bg.jpg">
        <div class="main-overlay"></div>
         <div class="wrapper">
             <div class="main-header">
@@ -53,19 +53,19 @@
                 <div class="col-md-4">
                     <div class="portfolio-block">
                     <img src="img/portfolio/1.jpg" alt="Работа №1">
-                    <a data-toggle="modal" data-work="work-1" href="#work">Смотреть работу</a>
+                    <a class="cd-btn cd-modal-trigger" data-work="work-1" href="#0">Смотреть работу</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="portfolio-block">
                     <img src="img/portfolio/2.jpg" alt="Работа №2">
-                    <a data-toggle="modal" data-work="work-2" href="#work">Смотреть работу</a>
+                    <a class="cd-btn cd-modal-trigger" data-work="work-2" href="#0">Смотреть работу</a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="portfolio-block">
                     <img src="img/portfolio/3.jpg" alt="Работа №3">
-                    <a data-toggle="modal" data-work="work-3" href="#work">Смотреть работу</a>
+                    <a class="cd-btn cd-modal-trigger" data-work="work-3" href="#0">Смотреть работу</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,20 @@
         </div>
     </div>
     </div>
-    
+
+<div class="cd-modal">
+	<div class="modal-content">
+		
+	</div> <!-- .modal-content -->
+
+	<a href="#0" class="modal-close">Close</a>
+</div> <!-- .cd-modal -->
+
+<div class="cd-transition-layer"> 
+	<div class="bg-layer"></div>
+</div> <!-- .cd-transition-layer -->    
+        
+                
     <!-- Всплывающие окна -->
 <div class="modal fade" id="work" role="dialog">
   <div class="modal-dialog" role="document">
@@ -103,7 +116,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Описание проекта</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
 
       </div>
     </div>
@@ -113,13 +126,14 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/parallax.min.js"></script>
+    <script src="js/main.js"></script>
     <script>
         $(function() {
-        var link = $('a[data-toggle="modal"]');
+        var link = $('.cd-modal-trigger');
             link.on('click', function(event) {
                 var work = $(this).attr('data-work');
-                var modal = $('.modal');
-                modal.find('.modal-body').load(work+'.html');
+                $('.modal-content').load(work+'.html');
             });
         });
     </script>
