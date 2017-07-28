@@ -1,0 +1,89 @@
+@color1: #f5a52a;
+@color2: #232323;
+.font(@fz: 18px) {
+  font-size: @fz;
+  font-family: 'Oswald', sans-serif;
+}
+body {
+	.font();
+}
+.header-bg {
+	display: block;
+	width: 100%;
+	height: 152px;
+	margin-bottom: 5px;
+    background: @color1; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(lighten(@color1, 15%), @color1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(lighten(@color1, 15%), @color1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(lighten(@color1, 15%), @color1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(lighten(@color1, 15%), @color1); /* Standard syntax (must be last) */	z-index: -1;
+}
+.header, .content {
+	width: 1000px;
+	margin: 0 auto;
+}
+.logo {
+	display: inline-block;
+	margin-top: 32px;
+}
+.menu {
+	display: inline-block;
+	float: right;
+	margin-top: 32px;
+	ul{
+		list-style: none;
+		li{
+			float: left;
+			a{
+				display: block;
+				padding: 32px 15px;
+				color: @color1;
+				background: @color2;
+				text-decoration: none;
+				&:hover{
+					padding: 32px 15px;
+					color: @color2;
+					background: @color1;
+				}
+			}
+		}
+	}
+}
+.h1-bg {
+	width: 100%;
+	height: 80px;
+    background: lighten(@color1, 20%);
+    h1 {
+    	.font(30px);
+    	text-transform: uppercase;
+    	padding: 23px;
+    	text-align: center;
+	}
+}
+.box {
+	display: inline-block;
+	width: 240px;
+	margin: 25px 3px;
+	background: lighten(@color2, 75%);
+	box-shadow: 0px 0px 1px 0 lighten(@color2, 60%);
+	text-decoration: none;
+	&:hover{
+		background: lighten(@color2, 90%);
+	}
+	img {
+		display: inline-block;
+	}
+	p {
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 15px;
+		color: @color2;
+		display: inline-block;
+		width: 120px;
+		padding: 5px 0 0 5px;
+		vertical-align: top;
+	}
+}
+.line {
+	.header-bg;
+	height: 3px;
+}
