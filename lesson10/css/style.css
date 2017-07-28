@@ -87,20 +87,10 @@ body {
   vertical-align: top;
 }
 .line {
+  position: absolute;
+  top: 95vh;
   display: block;
   width: 100%;
-  height: 152px;
-  margin-bottom: 5px;
   background: #f5a52a;
-  /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#f8c473, #f5a52a);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#f8c473, #f5a52a);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#f8c473, #f5a52a);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#f8c473, #f5a52a);
-  /* Standard syntax (must be last) */
-  z-index: -1;
-  height: 3px;
+  height: 5px;
 }
