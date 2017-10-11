@@ -49,7 +49,7 @@
 		</div>
 		
 		<div id="footer">
-			<p>Copyright &copy; <?="$sitename" ?> 20010 - <?php echo $a['year']; ?></p>
+			<p>Copyright &copy; <?="$sitename" ?> 2010 - <?php echo $a['year']; ?></p>
 		</div>	
 	</div>
 </body>
